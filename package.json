@@ -1,6 +1,6 @@
 {
   "name": "vuex-jwt",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Axios inteceptor to handle jwt refresh",
   "main": "dist/vuex-jwt.js",
   "module": "dist/vuex-jwt.es.js",
