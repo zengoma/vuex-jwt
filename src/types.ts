@@ -38,7 +38,6 @@ export interface AuthState {
   refreshingToken: boolean;
   refreshingCall?: AxiosPromise;
   errors: GenericObject;
-  entity: GenericObject;
   permissions: Array<string>;
 }
 

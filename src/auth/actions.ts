@@ -6,7 +6,7 @@ import { getTokens, storeTokens } from "../utils";
 
 const actions: ActionTree<AuthState, RootState> = {
   /**
-   *Get access Tokens and set entity context
+   *Get access Tokens
    * @param commit
    * @param payload { LoginRequestObject }
    * @param getters
@@ -26,15 +26,6 @@ const actions: ActionTree<AuthState, RootState> = {
 
         // Set authentication objects
         dispatch("setTokens", tokens);
-
-        // Set the entity
-        const user = getters.user;
-        if (user.entity) {
-          await dispatch("setEntity", { name: user.entity.name });
-          if (!user.is_superuser) {
-            await dispatch("setEntity", user.entity);
-          }
-        }
 
         return Promise.resolve(true);
       })
@@ -110,7 +101,6 @@ const actions: ActionTree<AuthState, RootState> = {
       refreshToken: undefined
     };
     dispatch("setTokens", tokens);
-    dispatch("setEntity", {});
   },
   /**
    * Check if reset token is valid

@@ -28,16 +28,6 @@ export const getTokens = (): AuthTokens => {
   const tokens = localStorage.getItem("auth") || JSON.stringify({ accessToken: undefined, refreshToken: undefined });
   return JSON.parse(tokens);
 };
-
-/**
- * Get the entity from localStorage
- * @param { GenericObject } entity
- * @return void
- */
-export const storeEntity = (entity: GenericObject): void => {
-  return localStorage.setItem("entity", JSON.stringify(entity));
-};
-
 /**
  * Validate a JWT
  * @param expiryMargin { number } Token is considered expired if only valid for x seconds or less
