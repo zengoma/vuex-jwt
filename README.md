@@ -39,22 +39,31 @@ yarn add vuex-jwt
     Vue.use(JWT, { store });
     ```
    
+3. Register the vuex-jwt auth store module
+
+```typescript
+import Vue from "vue";
+import Vuex from "vuex";
+import { auth } from "vuex-jwt";
+Vue.use(Vuex);
+
+const store = {
+  modules: {
+    auth,
+  }
+}
+
+```
+   
 3. Define the base url in then environmental variable
     **.env**
     ```dotenv
     VUE_APP_BASE_URL="/api"
+    VUE_APP_JWT_VALIDATION_PATH = "/password_reset/validate_token/"
+    VUE_APP_JWT_REFRESH_PATH = "/token/refresh/"
+    VUE_APP_JWT_OBTAIN_PATH = "/token/"
     ```
     
-### Vue Model
-
-1. Define dotenv variables
-
-.env
-
-```dotenv
-VUE_APP_BASE_URL="/api"
-```
-
 ## Authentication
 
 Authentication

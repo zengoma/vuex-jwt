@@ -17,7 +17,7 @@ const actions: ActionTree<AuthState, RootState> = {
     commit(CLEAR_ERRORS);
 
     return axios
-      .post(`${process.env.VUE_APP_API_BASE_URL}${process.env.VUE_APP_JWT_REFRESH_PATH}`, payload)
+      .post(`${process.env.VUE_APP_API_BASE_URL}${process.env.VUE_APP_JWT_OBTAIN_PATH}`, payload)
       .then(async response => {
         const tokens: AuthTokens = {
           accessToken: response.data.access,
