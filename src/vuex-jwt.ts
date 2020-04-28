@@ -4,11 +4,11 @@ import install from "./install";
 import Vue from "vue";
 import { JWTStoreOptions } from "./types";
 
-const Jwt: Vue.PluginObject<JWTStoreOptions> = {
+const VuexJwt: Vue.PluginObject<JWTStoreOptions> = {
   install
 };
 
-export default Jwt;
+export default VuexJwt;
 export { http, auth };
 export * from "./types";
 export * from "./utils";

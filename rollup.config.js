@@ -1,7 +1,7 @@
 import typescript from "rollup-plugin-typescript2";
 import pkg from "./package.json";
 export default {
-  input: "src/jwt.ts",
+  input: "src/vuex-jwt.ts",
   output: [
     {
       file: pkg.main,
