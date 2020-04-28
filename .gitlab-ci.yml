@@ -1,0 +1,32 @@
+image: node:10
+
+stages:
+- test
+- lint
+- build
+
+cache:
+  paths:
+  - node_modules/
+
+before_script:
+- yarn
+
+test:
+  stage: test
+  script:
+  - yarn test
+  - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
+
+lint:
+  stage: lint
+  script:
+  - yarn lint
+  - yarn typescript
+
+build:
+  stage: build
+  script:
+    - yarn build
+
+
