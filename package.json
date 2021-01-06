@@ -22,7 +22,7 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "jwt-decode": "^2.2.0"
   },
   "devDependencies": {
